@@ -101,50 +101,50 @@ const caseSections = [
 ];
 
 const adVideos = [
-  { src: "/videos/ad-01.mp4", poster: "/videos/posters/ad-01.webp", type: "video/mp4", title: "7月18日", subtitle: "产品广告视频 · 作品 01" },
-  { src: "/videos/ad-02.mp4", poster: "/videos/posters/ad-02.webp", type: "video/mp4", title: "7月6日", subtitle: "产品广告视频 · 作品 02" },
-  { src: "/videos/ad-03.mp4", poster: "/videos/posters/ad-03.webp", type: "video/mp4", title: "7月1日", subtitle: "产品广告视频 · 作品 03" },
+  { src: "./videos/ad-01.mp4", poster: "./videos/posters/ad-01.webp", type: "video/mp4", title: "7月18日", subtitle: "产品广告视频 · 作品 01" },
+  { src: "./videos/ad-02.mp4", poster: "./videos/posters/ad-02.webp", type: "video/mp4", title: "7月6日", subtitle: "产品广告视频 · 作品 02" },
+  { src: "./videos/ad-03.mp4", poster: "./videos/posters/ad-03.webp", type: "video/mp4", title: "7月1日", subtitle: "产品广告视频 · 作品 03" },
 ];
 
 const vlogVideos = [
-  { src: "/videos/vlog-01-optimized.mp4", poster: "/videos/posters/vlog-01.webp", type: "video/mp4", title: "Vlog 01", subtitle: "生活影像记录" },
-  { src: "/videos/vlog-02.mp4", poster: "/videos/posters/vlog-02.webp", type: "video/mp4", title: "Vlog 02", subtitle: "日常片段记录" },
+  { src: "./videos/vlog-01-optimized.mp4", poster: "./videos/posters/vlog-01.webp", type: "video/mp4", title: "Vlog 01", subtitle: "生活影像记录" },
+  { src: "./videos/vlog-02.mp4", poster: "./videos/posters/vlog-02.webp", type: "video/mp4", title: "Vlog 02", subtitle: "日常片段记录" },
 ];
 
 const fashionVideo = {
-  src: "/videos/fashion-ad-01.mp4",
-  poster: "/videos/posters/fashion-ad-01.webp",
+  src: "./videos/fashion-ad-01.mp4",
+  poster: "./videos/posters/fashion-ad-01.webp",
   type: "video/mp4",
   title: "深色丹宁衬衫",
   subtitle: "服装广告视频 · 作品 01",
 };
 
 const fashionImages = [
-  { src: "/fashion/fashion-01.webp", alt: "深色丹宁衬衫：双胸袋结构与局部装饰" },
-  { src: "/fashion/fashion-02.webp", alt: "深色丹宁衬衫：日常穿着的结构与质感" },
-  { src: "/fashion/fashion-03.webp", alt: "深色丹宁衬衫：袖口结构与丹宁斜纹肌理" },
-  { src: "/fashion/fashion-04.webp", alt: "深色丹宁衬衫：正反面结构展示" },
-  { src: "/fashion/fashion-05.webp", alt: "深色丹宁衬衫：模特全身穿搭展示" },
-  { src: "/fashion/fashion-06.webp", alt: "深色丹宁衬衫：日常搭配延展" },
-  { src: "/fashion/fashion-07.webp", alt: "深色丹宁衬衫：结构车线细节" },
-  { src: "/fashion/fashion-08.webp", alt: "深色丹宁衬衫：翻领与门襟细节" },
+  { src: "./fashion/fashion-01.webp", alt: "深色丹宁衬衫：双胸袋结构与局部装饰" },
+  { src: "./fashion/fashion-02.webp", alt: "深色丹宁衬衫：日常穿着的结构与质感" },
+  { src: "./fashion/fashion-03.webp", alt: "深色丹宁衬衫：袖口结构与丹宁斜纹肌理" },
+  { src: "./fashion/fashion-04.webp", alt: "深色丹宁衬衫：正反面结构展示" },
+  { src: "./fashion/fashion-05.webp", alt: "深色丹宁衬衫：模特全身穿搭展示" },
+  { src: "./fashion/fashion-06.webp", alt: "深色丹宁衬衫：日常搭配延展" },
+  { src: "./fashion/fashion-07.webp", alt: "深色丹宁衬衫：结构车线细节" },
+  { src: "./fashion/fashion-08.webp", alt: "深色丹宁衬衫：翻领与门襟细节" },
 ];
 
 const portraitImages = [
-  { src: "/portraits/portrait-01.webp", alt: "汉服写真：古城街巷中的少女侧影" },
-  { src: "/portraits/portrait-02.webp", alt: "汉服写真：古建筑前的双人合影" },
-  { src: "/portraits/portrait-03.webp", alt: "汉服写真：宫门前的蓝色汉服少女" },
-  { src: "/portraits/portrait-04.webp", alt: "汉服写真：建筑中轴线上的持伞少女" },
-  { src: "/portraits/portrait-05.webp", alt: "汉服写真：灯笼背景前的粉色汉服少女" },
-  { src: "/portraits/portrait-06.webp", alt: "古装写真：山石旁读书的红衣少年" },
-  { src: "/portraits/portrait-07.webp", alt: "汉服写真：古建筑栏杆旁的粉衣少女" },
-  { src: "/portraits/portrait-08.webp", alt: "古装写真：草地边共读画卷的少年少女" },
-  { src: "/portraits/portrait-09.webp", alt: "汉服写真：书案前小憩的蓝衣少女" },
-  { src: "/portraits/portrait-10.webp", alt: "汉服写真：竹林中撑伞的蓝衣少女" },
-  { src: "/portraits/portrait-11.webp", alt: "汉服写真：红色书法布景前的唐风人物" },
-  { src: "/portraits/portrait-12.webp", alt: "古装写真：书案前阅读的蓝衣少年" },
-  { src: "/portraits/portrait-13.webp", alt: "古装写真：宫殿前的侠客人物" },
-  { src: "/portraits/portrait-14.webp", alt: "汉服写真：古建筑前撑伞的粉衣少女" },
+  { src: "./portraits/portrait-01.webp", alt: "汉服写真：古城街巷中的少女侧影" },
+  { src: "./portraits/portrait-02.webp", alt: "汉服写真：古建筑前的双人合影" },
+  { src: "./portraits/portrait-03.webp", alt: "汉服写真：宫门前的蓝色汉服少女" },
+  { src: "./portraits/portrait-04.webp", alt: "汉服写真：建筑中轴线上的持伞少女" },
+  { src: "./portraits/portrait-05.webp", alt: "汉服写真：灯笼背景前的粉色汉服少女" },
+  { src: "./portraits/portrait-06.webp", alt: "古装写真：山石旁读书的红衣少年" },
+  { src: "./portraits/portrait-07.webp", alt: "汉服写真：古建筑栏杆旁的粉衣少女" },
+  { src: "./portraits/portrait-08.webp", alt: "古装写真：草地边共读画卷的少年少女" },
+  { src: "./portraits/portrait-09.webp", alt: "汉服写真：书案前小憩的蓝衣少女" },
+  { src: "./portraits/portrait-10.webp", alt: "汉服写真：竹林中撑伞的蓝衣少女" },
+  { src: "./portraits/portrait-11.webp", alt: "汉服写真：红色书法布景前的唐风人物" },
+  { src: "./portraits/portrait-12.webp", alt: "古装写真：书案前阅读的蓝衣少年" },
+  { src: "./portraits/portrait-13.webp", alt: "古装写真：宫殿前的侠客人物" },
+  { src: "./portraits/portrait-14.webp", alt: "汉服写真：古建筑前撑伞的粉衣少女" },
 ];
 
 const capabilities = [
