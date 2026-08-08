@@ -98,6 +98,18 @@ const caseSections = [
       { kind: "IMAGE CASE", name: "服装广告图片", format: "图片 · Lookbook / 海报" },
     ],
   },
+  {
+    no: "06",
+    type: "AI AUTOMATED E-COMMERCE",
+    title: "AI 自动化商品图",
+    desc: "展示从实拍证据读取、详情页生成与质量检查，到批量模块交付的 AI 自动化商品图流程。",
+    tags: ["AI 自动化", "商品详情页", "批量交付"],
+    tone: "amber",
+    cases: [
+      { kind: "WORKFLOW", name: "自动化生成流程", format: "流程 · 生成 / 检查" },
+      { kind: "IMAGE CASE", name: "商品图交付成果", format: "图片 · 详情页 / 模块" },
+    ],
+  },
 ];
 
 const adVideos = [
@@ -145,6 +157,12 @@ const portraitImages = [
   { src: "./portraits/portrait-12.webp", alt: "古装写真：书案前阅读的蓝衣少年" },
   { src: "./portraits/portrait-13.webp", alt: "古装写真：宫殿前的侠客人物" },
   { src: "./portraits/portrait-14.webp", alt: "汉服写真：古建筑前撑伞的粉衣少女" },
+];
+
+const automationImages = [
+  { src: "./automation/automation-01-workflow.png", alt: "AI 自动化商品图工作流处理与质量检查记录" },
+  { src: "./automation/automation-02-detail-page.png", alt: "黑色高腰阔腿长裤商品详情页生成效果" },
+  { src: "./automation/automation-03-output-grid.png", alt: "AI 自动化商品图批量详情模块输出网格" },
 ];
 
 const capabilities = [
@@ -238,6 +256,15 @@ export default function Home() {
                       <img src={fashionImages[0].src} alt="" loading="lazy" decoding="async" />
                       <img src={fashionImages[6].src} alt="" loading="lazy" decoding="async" />
                     </div>
+                  ) : project.no === "06" ? (
+                    <div className="automationTeaser" aria-hidden="true">
+                      {[automationImages[1], automationImages[0], automationImages[2]].map((image, index) => (
+                        <figure key={image.src}>
+                          <img src={image.src} alt="" loading="lazy" decoding="async" />
+                          <figcaption>{index === 0 ? "DETAIL PAGE" : index === 1 ? "WORKFLOW" : "OUTPUTS"}</figcaption>
+                        </figure>
+                      ))}
+                    </div>
                   ) : (
                     <div className="caseMediaPair">
                       {project.cases.map((item) => (
@@ -251,10 +278,10 @@ export default function Home() {
                   )}
                 </div>
                 <div className="projectInfo">
-                  <div className="projectMeta"><small>{project.no} / 2026</small><span>{project.no === "01" ? "3 VIDEOS ONLINE" : project.no === "03" ? "2 VIDEOS ONLINE" : project.no === "04" ? "14 PHOTOS ONLINE" : project.no === "05" ? "1 VIDEO · 8 IMAGES" : "OPEN PROJECT ↗"}</span></div>
+                  <div className="projectMeta"><small>{project.no} / 2026</small><span>{project.no === "01" ? "3 VIDEOS ONLINE" : project.no === "03" ? "2 VIDEOS ONLINE" : project.no === "04" ? "14 PHOTOS ONLINE" : project.no === "05" ? "1 VIDEO · 8 IMAGES" : project.no === "06" ? "3 IMAGES ONLINE" : "OPEN PROJECT ↗"}</span></div>
                   <h3>{project.title}</h3>
                   <p>{project.desc}</p>
-                  <div className="mediaLabels"><span>01 · VIDEO</span><span>02 · IMAGE</span></div>
+                  <div className="mediaLabels"><span>{project.no === "06" ? "01 · WORKFLOW" : "01 · VIDEO"}</span><span>{project.no === "06" ? "02 · OUTPUT" : "02 · IMAGE"}</span></div>
                   <div className="projectTags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                 </div>
               </button>
@@ -327,6 +354,15 @@ export default function Home() {
                       </button>
                     ))}
                   </div>
+                </div>
+              ) : activeProject.no === "06" ? (
+                <div className="automationGallery" aria-label="AI 自动化商品图案例画廊">
+                  {automationImages.map((image, index) => (
+                    <button className="automationThumb" type="button" key={image.src} onClick={() => setSelectedImage(image)} aria-label={`放大查看第 ${index + 1} 张 AI 自动化商品图`}>
+                      <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+                      <span><small>{String(index + 1).padStart(2, "0")}</small> 点击放大</span>
+                    </button>
+                  ))}
                 </div>
               ) : (
                 <div className="modalCases">
