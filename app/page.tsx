@@ -110,6 +110,18 @@ const caseSections = [
       { kind: "IMAGE CASE", name: "商品图交付成果", format: "图片 · 详情页 / 模块" },
     ],
   },
+  {
+    no: "07",
+    type: "AI FASHION MODEL",
+    title: "AI 模特",
+    desc: "以稳定人物身份、自然姿态与服装质感为核心，呈现适用于女装电商与品牌 Lookbook 的 AI 模特视觉。",
+    tags: ["AI 模特", "女装电商", "人物一致性"],
+    tone: "rosewood",
+    cases: [
+      { kind: "IMAGE CASE", name: "商务女装系列", format: "图片 · Lookbook / 电商" },
+      { kind: "MODEL SYSTEM", name: "一致性人物视觉", format: "人物 · 造型 / 姿态" },
+    ],
+  },
 ];
 
 const adVideos = [
@@ -165,6 +177,14 @@ const automationImages = [
   { src: "./automation/automation-03-output-grid.png", alt: "AI 自动化商品图批量详情模块输出网格" },
 ];
 
+const aiModelImages = [
+  { src: "./ai-model/ai-model-01.webp", alt: "AI 模特商务女装系列：深棕色西装套装正面全身展示" },
+  { src: "./ai-model/ai-model-02.webp", alt: "AI 模特商务女装系列：米色花饰上衣与黑色印花半裙" },
+  { src: "./ai-model/ai-model-03.webp", alt: "AI 模特商务女装系列：白色波点长袖连衣裙" },
+  { src: "./ai-model/ai-model-04.webp", alt: "AI 模特商务女装系列：柔粉色缎面上衣与不规则半裙" },
+  { src: "./ai-model/ai-model-05.webp", alt: "AI 模特商务女装系列：柔粉色无袖上衣与阔腿裤" },
+  { src: "./ai-model/ai-model-06.webp", alt: "AI 模特商务女装系列：浅蓝色荷叶边上衣与深蓝阔腿裤" },
+];
 const capabilities = [
   ["01", "创意策划", "从 brief 提炼概念，完成创意方向、情绪板与脚本结构。"],
   ["02", "AI 视觉生成", "覆盖人物、服装、场景、产品及风格一致性的视觉开发。"],
@@ -265,6 +285,15 @@ export default function Home() {
                         </figure>
                       ))}
                     </div>
+                  ) : project.no === "07" ? (
+                    <div className="aiModelTeaser" aria-hidden="true">
+                      {[aiModelImages[0], aiModelImages[3], aiModelImages[5]].map((image, index) => (
+                        <figure key={image.src}>
+                          <img src={image.src} alt="" loading="lazy" decoding="async" />
+                          <figcaption>{index === 0 ? "TAILORING" : index === 1 ? "SATIN" : "SMART CASUAL"}</figcaption>
+                        </figure>
+                      ))}
+                    </div>
                   ) : (
                     <div className="caseMediaPair">
                       {project.cases.map((item) => (
@@ -278,10 +307,10 @@ export default function Home() {
                   )}
                 </div>
                 <div className="projectInfo">
-                  <div className="projectMeta"><small>{project.no} / 2026</small><span>{project.no === "01" ? "3 VIDEOS ONLINE" : project.no === "03" ? "2 VIDEOS ONLINE" : project.no === "04" ? "14 PHOTOS ONLINE" : project.no === "05" ? "1 VIDEO · 8 IMAGES" : project.no === "06" ? "3 IMAGES ONLINE" : "OPEN PROJECT ↗"}</span></div>
+                  <div className="projectMeta"><small>{project.no} / 2026</small><span>{project.no === "01" ? "3 VIDEOS ONLINE" : project.no === "03" ? "2 VIDEOS ONLINE" : project.no === "04" ? "14 PHOTOS ONLINE" : project.no === "05" ? "1 VIDEO · 8 IMAGES" : project.no === "06" ? "3 IMAGES ONLINE" : project.no === "07" ? "6 IMAGES ONLINE" : "OPEN PROJECT ↗"}</span></div>
                   <h3>{project.title}</h3>
                   <p>{project.desc}</p>
-                  <div className="mediaLabels"><span>{project.no === "06" ? "01 · WORKFLOW" : "01 · VIDEO"}</span><span>{project.no === "06" ? "02 · OUTPUT" : "02 · IMAGE"}</span></div>
+                  <div className="mediaLabels"><span>{project.no === "06" ? "01 · WORKFLOW" : project.no === "07" ? "01 · LOOKBOOK" : "01 · VIDEO"}</span><span>{project.no === "06" ? "02 · OUTPUT" : project.no === "07" ? "02 · AI MODEL" : "02 · IMAGE"}</span></div>
                   <div className="projectTags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                 </div>
               </button>
@@ -359,6 +388,15 @@ export default function Home() {
                 <div className="automationGallery" aria-label="AI 自动化商品图案例画廊">
                   {automationImages.map((image, index) => (
                     <button className="automationThumb" type="button" key={image.src} onClick={() => setSelectedImage(image)} aria-label={`放大查看第 ${index + 1} 张 AI 自动化商品图`}>
+                      <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+                      <span><small>{String(index + 1).padStart(2, "0")}</small> 点击放大</span>
+                    </button>
+                  ))}
+                </div>
+              ) : activeProject.no === "07" ? (
+                <div className="aiModelGallery" aria-label="AI 模特作品画廊">
+                  {aiModelImages.map((image, index) => (
+                    <button className="aiModelThumb" type="button" key={image.src} onClick={() => setSelectedImage(image)} aria-label={`放大查看第 ${index + 1} 张 AI 模特作品`}>
                       <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
                       <span><small>{String(index + 1).padStart(2, "0")}</small> 点击放大</span>
                     </button>
